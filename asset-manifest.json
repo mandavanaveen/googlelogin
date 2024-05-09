@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/googlelogin/static/css/main.815207b8.css",
-    "main.js": "/googlelogin/static/js/main.1c9986c7.js",
+    "main.js": "/googlelogin/static/js/main.a8f92854.js",
     "index.html": "/googlelogin/index.html",
     "main.815207b8.css.map": "/googlelogin/static/css/main.815207b8.css.map",
-    "main.1c9986c7.js.map": "/googlelogin/static/js/main.1c9986c7.js.map"
+    "main.a8f92854.js.map": "/googlelogin/static/js/main.a8f92854.js.map"
   },
   "entrypoints": [
     "static/css/main.815207b8.css",
-    "static/js/main.1c9986c7.js"
+    "static/js/main.a8f92854.js"
   ]
 }
