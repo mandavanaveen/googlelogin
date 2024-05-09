@@ -1,6 +1,6 @@
 {
   "homepage": "https://mandavanaveen.github.io/googlelogin",
-  "name": "google-login-app",
+  "name": "googlelogin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
