@@ -18,7 +18,7 @@ function Loginpage() {
   });
 
   return (
-    <div className="w-full h-screen bg-customColor flex flex-col items-center">
+    <div className="w-screen h-screen bg-customColor flex flex-col items-center">
       <div class="w-[430px] h-[520px] absolute -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4">
         <div class="h-[200px] w-[200px] absolute rounded-full bg-gradient-to-b from-blue-700 to-blue-500 -top-20 -left-20"></div>
         <div class="h-[200px] w-[200px] absolute rounded-full bg-gradient-to-r from-orange-700 to-yellow-700 -right-[30px] -bottom-20"></div>
