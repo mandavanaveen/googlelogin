@@ -1,34 +1,50 @@
 import "./App.css";
-// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import Profilepage from "./components/Profilepage";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Profilepage from "./components/Profilepage";
 import Loginpage from "./components/Loginpage";
+import Navbar from "./components/Navbar";
 
 function App() {
-  // const isInstagramBrowser = () => {
-  //   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  //   return userAgent.match(/Instagram/i) !== null;
-  // };
-
-  // const handleExternalLinkClick = (e) => {
-  //   if (isInstagramBrowser() && e.target.tagName === "A") {
-  //     e.preventDefault();
-  //     window.open(e.target.href, "_system");
-  //   }
-  // };
-
+  const [profileData, setProfileData] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    const referrer = document.referrer;
+    if (referrer.includes("instagram.com")) {
+      window.location.href = "https://mandavanaveen.github.io/googlelogin";
+    }
+  }, []);
   return (
-    <div>
-      <Loginpage />
-      {/* <Router>
-            <div onClick={handleExternalLinkClick}>
-              <Routes>
-                <Route exact path="/" Component={Loginpage} />
-                <Route path="/profile" Component={Profilepage} />
-                <Redirect to="/" />
-              </Routes>
-            </div>
-          </Router> */}
-    </div>
+    <Router>
+      <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <Loginpage
+              setIsLoggedIn={setIsLoggedIn}
+              setProfileData={setProfileData}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/logout"
+          element={
+            <Loginpage
+              setIsLoggedIn={setIsLoggedIn}
+              setProfileData={setProfileData}
+            />
+          }
+        />
+        <Route
+          exact
+          path="/profile"
+          element={<Profilepage profileData={profileData} />}
+        />
+      </Routes>
+    </Router>
   );
 }
 

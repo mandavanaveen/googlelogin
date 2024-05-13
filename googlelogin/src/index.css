@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.main h1 {
+    font-size: 1.5rem;
+  }
+  
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    max-height: 100vh;
+    background-color: #1F252E;
+    color: white;
+  }
+  
+  /* Navbar */
+  
+  
+  .nav-bar{
+    height: 60px;
+    background-color: rgb(250, 209, 2);
+    column-gap: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-ul{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+    list-style: none;
+  }

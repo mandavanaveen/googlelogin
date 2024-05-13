@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useGoogleLogin } from "@react-oauth/google";
 import { Icon } from "@iconify/react";
+import { useNavigate } from "react-router-dom";
 
-function Loginpage() {
+function Loginpage({ setProfileData, setIsLoggedIn }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const login = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
@@ -14,23 +16,11 @@ function Loginpage() {
 
       const profile = await res.json();
       console.log("profile", profile);
+      setIsLoggedIn(true);
+      setProfileData(profile);
+      navigate("/profile");
     },
   });
-
-  useEffect(() => {
-    const isInstagramApp = () => {
-      const userAgent = window.navigator.userAgent.toLowerCase();
-      return /instagram/i.test(userAgent);
-    };
-
-    const redirectToDefaultBrowser = () => {
-      if (isInstagramApp()) {
-        window.location.href = "https://mandavanaveen.github.io/googlelogin/";
-      }
-    };
-
-    redirectToDefaultBrowser();
-  }, []);
 
   return (
     <div className="w-screen h-screen bg-customColor flex flex-col items-center">
